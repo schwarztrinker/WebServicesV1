@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { packageNonAnimatableStyles } from '@angular/animations/browser/src/render/special_cased_styles';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  
+  
+
+  constructor() { 
+    
+  }
 
   ngOnInit() {
+    console.log("Home");
   }
 
 }
