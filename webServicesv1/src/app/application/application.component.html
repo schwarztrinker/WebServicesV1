@@ -1,0 +1,44 @@
+<mat-vertical-stepper>
+    <mat-step label="Start/Welcome!">
+      <p>Hello! </p>
+
+      <p>
+          Welcome to our application "Beer and Bar Roulette"! 
+      </p>
+    </mat-step>
+
+    <!-- Google Maps  -->
+    <mat-step label="Postion">
+      <h5>Set your position on the map!</h5>
+         
+      <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
+    </mat-step>
+  
+    <!-- Set dstance -->
+    <mat-step label="Distance">
+        <h5>How far do you want to walk/drive? (max 100km) </h5>
+      <mat-slider
+      tickInterval="auto"
+      min="1"
+      max="100"
+      (input)="onInputChange($event)">
+      </mat-slider>
+
+        <h3>Distance: {{ value }} km</h3>
+        
+    </mat-step>
+
+
+
+
+
+    <mat-step label="Step 1">
+      Content 2
+    </mat-step>
+    <mat-step label="Driver?">
+        <p>Do you have to drive?</p>
+        <mat-slide-toggle (input)="onInputChangeButton($event)"> -> {{buttonValue}} </mat-slide-toggle>
+        
+    </mat-step>
+
+</mat-vertical-stepper>
