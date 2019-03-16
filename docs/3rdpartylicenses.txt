@@ -116,6 +116,8 @@ THE SOFTWARE.
 
 @angular/material/core
 
+@angular/material/form-field
+
 @angular/material/icon
 
 @angular/material/list

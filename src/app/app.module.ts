@@ -17,8 +17,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+
+import { HttpClientModule } from '@angular/common/http';
 
 import { AgmCoreModule } from '@agm/core';
+import { MapsAPILoader } from '@agm/core';
 import { HomeComponent } from './home/home.component';
 
 
@@ -48,7 +52,9 @@ import { HomeComponent } from './home/home.component';
     MatGridListModule,
     MatSliderModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    HttpClientModule
 
   ],
   providers: [],

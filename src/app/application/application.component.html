@@ -1,4 +1,8 @@
 <mat-vertical-stepper>
+    
+
+
+
     <mat-step label="Start/Welcome!">
       <p>Hello! </p>
 
@@ -9,9 +13,23 @@
 
     <!-- Google Maps  -->
     <mat-step label="Postion">
-      <h5>Set your position on the map!</h5>
-         
-      <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
+      <h5>Set your position on the map! Use the mouse or use your postal code alternatively                     </h5>  
+      <p>coords: {{lat}} {{lng}}</p>
+        <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onChoseLocation($event)">
+          <agm-marker [latitude]="lat" [longitude]="lng" *ngIf="locationChosen"></agm-marker>
+        </agm-map>
+        <p>enter your postal code here</p>
+        <form class="form">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="your postal code e.g. 74821">
+          </mat-form-field>
+        </form>
+
+
+        <!-- copy from https://github.com/bodrovis/GoogleMapsAngular/blob/master/src/app/map/map.component.html   [(ngModel)]='location.address_zip'-->
+
+        <!-- <button (click)='updateOnMap()' type="submit" class="btn btn-primary">Search</button> -->
+
     </mat-step>
   
     <!-- Set dstance -->
@@ -29,16 +47,30 @@
     </mat-step>
 
 
-
-
-
-    <mat-step label="Step 1">
-      Content 2
+    <mat-step label="Driver?" matStepperIcon="done_all">
+      <p>Do you have to drive?</p>
+      <mat-slide-toggle (input)="onInputChangeButton($event)"> -> {{buttonValue}} </mat-slide-toggle>
+      
     </mat-step>
-    <mat-step label="Driver?">
-        <p>Do you have to drive?</p>
-        <mat-slide-toggle (input)="onInputChangeButton($event)"> -> {{buttonValue}} </mat-slide-toggle>
-        
+
+
+
+
+    <mat-step label="Generate your personal Result!">
+      <p>Your result for:</p>
+      <ul>
+        <li>Your positon: near <strong> Latitude: {{lat}} Longitude: {{lng}} </strong> </li>
+        <li>Maximal distance to walk/drive:  <strong> {{value}} </strong> </li>
+        <li>You are a driver: <strong> {{buttonValue}}  </strong> </li>
+      </ul>
+
+      <a href="./application"   mat-raised-button color="primary"> Get Results!</a>
+      
     </mat-step>
+
+
+
+
+    
 
 </mat-vertical-stepper>
