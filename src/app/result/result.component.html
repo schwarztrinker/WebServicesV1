@@ -1,0 +1,63 @@
+<div class="center-div">
+  <h1 align="center">Your Personal Results: </h1>
+</div>
+
+<div class="cardDiv">
+  <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Your random pub</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="12">
+          <agm-marker [latitude]="lat" [longitude]="lng" [visible]="true" > </agm-marker>
+        </agm-map>
+        <h4>Pub name:</h4>
+          <p>{{data.pubName}}</p>
+          <p>{{data.ltd}}</p> 
+        <h4>Adress: </h4>
+          <p >{{data.pubStreet}}</p>
+          <p >{{data.pubCity}}</p>
+
+  
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="cardDiv">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Your random beer or drink</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h4>The name of your drink: </h4>
+          <p> {{data.drinkName}} </p>
+    
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+
+
+
+
+
+
+
+<div class="cardDiv">
+  <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>New Try!</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          The result wasn't appropriate, or you want to try it again?
+        </p>
+        
+        <a href="./application"   mat-raised-button color="primary">
+          Click Here! </a>
+  
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
