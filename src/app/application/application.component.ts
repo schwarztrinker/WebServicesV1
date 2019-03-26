@@ -20,8 +20,8 @@ declare var google: any;
 export class ApplicationComponent implements OnInit {
 
   title: string = 'My first AGM project';
-  lat: number = 49.3544849319785;
-  lng: number = 9.150533080101013;
+  lat: number = 51.3544849319785;
+  lng: number = 11.150533080101013;
   locationChosen: boolean = false;
 
   city : any;
