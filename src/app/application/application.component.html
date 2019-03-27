@@ -1,8 +1,5 @@
 <mat-vertical-stepper>
     
-
-
-
     <mat-step label="Start/Welcome!">
       <p>Hello! </p>
 
@@ -18,7 +15,6 @@
         <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onChoseLocation($event)" [zoom]="6">
           <agm-marker [latitude]="lat" [longitude]="lng" *ngIf="locationChosen"></agm-marker>
         </agm-map>
-        
         
         
       <!--         
@@ -72,11 +68,6 @@
 
       <a href="./result"   mat-raised-button color="primary"> Get Results!</a>
       
-    </mat-step>
-
-
-
-
-    
+    </mat-step>    
 
 </mat-vertical-stepper>
