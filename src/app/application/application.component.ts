@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 import { HttpClient } from '@angular/common/http';
+import { ResultService } from '../result/result-service.service';
+import { SenddataurlService } from '../senddataurl.service';
 
 
 
@@ -19,7 +21,7 @@ declare var google: any;
 
 export class ApplicationComponent implements OnInit {
 
-  title: string = 'My first AGM project';
+  title: string = 'Project';
   lat: number = 51.3544849319785;
   lng: number = 11.150533080101013;
   locationChosen: boolean = false;
@@ -44,18 +46,16 @@ export class ApplicationComponent implements OnInit {
     this.lat = event.coords.lat;
     this.lng = event.coords.lng;
     this.locationChosen = true;
+  }
 
-    
-
-    console.log(this.city);
-
+  click(){
+    this.senddataurl.myMethod(this.lng);
 
   }
 
 
-
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private senddataurl: SenddataurlService) { 
+  }
 
   ngOnInit() {
   }
